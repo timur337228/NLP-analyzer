@@ -1,14 +1,14 @@
 import asyncio
 from googletrans import Translator
 
-emotion_dict = {
-    "love": "любовь",
-    "sadness": "печаль",
-    "joy": "радость",
-    "fear": "страх",
-    "anger": "гнев",
-    "surprise": "удивление"
-}
+# emotion_dict = {
+#     "love": "любовь",
+#     "sadness": "печаль",
+#     "joy": "радость",
+#     "fear": "страх",
+#     "anger": "гнев",
+#     "surprise": "удивление"
+# }
 
 
 async def translate_text(text, translator):
@@ -28,9 +28,8 @@ async def main():
             text, emotion = line.strip().split(';')
 
             translated_text = await translate_text(text, translator)
-            translated_emotion = translate_emotion(emotion, emotion_dict)
 
-            outfile.write(f"{translated_text};{translated_emotion}\n")
+            outfile.write(f"{translated_text};{emotion}\n")
     print('Все гуд!')
 
 
