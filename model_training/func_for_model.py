@@ -3,8 +3,8 @@ from torch.utils.data import Dataset
 from transformers import BertTokenizer, BertForSequenceClassification
 import numpy as np
 import os
+
 main_path = os.path.dirname(os.path.abspath(__file__))
-print(main_path)
 path_to_model = f'{main_path}/sentiment_model'
 
 
@@ -131,4 +131,3 @@ def eval_model(model, data_loader, loss_fn, device):
             losses.append(loss.item())
 
     return correct_predictions.double() / len(data_loader.dataset), np.mean(losses)
-

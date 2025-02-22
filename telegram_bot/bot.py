@@ -3,7 +3,6 @@ from aiogram.types import Message, CallbackQuery
 from aiogram.filters import CommandStart, Command
 import telegram_bot.keyboards as kb
 from telegram_bot.config import settings
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import asyncio
 from model_training.api_model import get_output_to_model
 
@@ -40,7 +39,16 @@ async def lang_set(data: CallbackQuery):
            'eu': 'The language has been successfully selected,'
                  ' now write a message and I will send its characteristics.'}
     await data.message.answer(txt[language])
-    return
+    txt = {
+        'ru': 'Внимание текст на русском языке может быть обработан не точно, '
+              'т.к. дата сет для тренировки модели на русском языке был переведен '
+              'и сделан на скорую руку, но дата сет на английском языке, '
+              'который был в условие задачи работает с отличной точностью',
+        'eu': 'Attention, date set in Russian may not be processed accurately,'
+              'because The dataset for training the model in Russian has been translated '
+              'and made in haste, but the date set is in English,'
+              'which was in the conditions of the problem works with excellent accuracy'}
+    await data.message.answer(txt[language])
 
 
 @dp.message(check_lang())

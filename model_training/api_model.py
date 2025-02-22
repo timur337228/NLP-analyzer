@@ -23,7 +23,6 @@ def get_output_to_model(text, lang):
     model.to(device)
 
     sentiment, probabilities = predict_sentiment(text, model, tokenizer, label_encoder, device)
-    print('zip', zip(label_encoder.classes_, probabilities), 'lb', label_encoder.classes_, 'pr', probabilities)
     message['all_sentiment'] = []
     for emotion, prob in zip(label_encoder.classes_, probabilities):
         message['all_sentiment'].append(f"{emotion_dict[emotion] if lang == 'ru' else emotion}: {prob:.4f}")
