@@ -22,7 +22,6 @@ def translate_emotion(emotion, emotion_dict):
 
 async def main():
     translator = Translator()
-
     with open('eu_train.txt', 'r', encoding='utf-8') as infile, open('ru_train.txt', 'w', encoding='utf-8') as outfile:
         for line in infile:
             text, emotion = line.strip().split(';')

@@ -2,8 +2,9 @@ import torch
 from torch.utils.data import Dataset
 from transformers import BertTokenizer, BertForSequenceClassification
 import numpy as np
-
-main_path = 'model_training/'
+import os
+main_path = os.path.dirname(os.path.abspath(__file__))
+print(main_path)
 path_to_model = f'{main_path}/sentiment_model'
 
 

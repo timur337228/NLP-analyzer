@@ -1,0 +1,11 @@
+Epoch 1/5
+Train loss 1.4159246077537537 accuracy 0.43575
+Epoch 2/5
+Train loss 1.0233876765966416 accuracy 0.592
+Epoch 3/5
+Train loss 0.8928401801586151 accuracy 0.6405
+Epoch 4/5
+Train loss 0.8170140427350998 accuracy 0.67425
+Epoch 5/5
+Train loss 0.7571702062189579 accuracy 0.706
+Test loss 0.6468487913012505 accuracy 0.761
